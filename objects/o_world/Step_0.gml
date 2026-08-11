@@ -72,3 +72,22 @@ if (!border_wait && old_border != border_spr && border_alpha >= 1.0) {
     border_alpha = 0;
     border_wait  = true;
 }
+
+/* --------------------------------
+ * For the border system (new)
+ * -------------------------------- */
+var _win_w = window_get_width();
+var _win_h = window_get_height();
+
+var _target_w = (global.borders ? 960 : 640);
+var _target_h = (global.borders ? 540 : 480);
+ratio = min(_win_w / _target_w, _win_h / _target_h);
+
+border_x = (_win_w - (_target_w * ratio)) * 0.5;
+border_y = (_win_h - (_target_h * ratio)) * 0.5;
+
+game_w = 640 * ratio;
+game_h = 480 * ratio;
+
+game_x = border_x + (global.borders ? 160 * ratio : 0);
+game_y = border_y + (global.borders ? 30 * ratio : 0);

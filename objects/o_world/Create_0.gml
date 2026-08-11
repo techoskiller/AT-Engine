@@ -42,6 +42,12 @@ border_test    = true;
 border_alpha   = 1.0;
 border_wait    = false;
 
+border_x = 0;
+border_y = 0;
+game_x = 0;
+game_y = 0;
+ratio = 0;
+
 BASE_WIDTH     = 320;
 BASE_HEIGHT    = 240;
 
