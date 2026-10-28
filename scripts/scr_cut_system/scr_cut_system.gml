@@ -2,7 +2,7 @@
 // THE cutscene.
 //--------------------------------
 
-// really want to point out that velvetclover made this WHOLE system!! tysm
+// really want to point out that taylordev made this WHOLE system!! tysm
 // I (techoskiller) changed it a bit, but except for that, they made everything lol
 
 globalvar __cut_player_spd;
@@ -89,11 +89,11 @@ function cutscene_t() constructor {
 		return self;
 	}
 	
-	static wait_until = function(sythax) {
-		if (sythax)
-			return self
-		else
-			return -1
+	static wait_until = function(func)
+	{
+	    if (is_callable(func))
+	        cutscene_wait_until(self, func);
+	    return self;
 	}
 	
 	static run = function(func) {
@@ -161,6 +161,14 @@ function cutscene_stop(cut, on_queue = true) {
 function cutscene_raw(cut, struct) {
 	__proc_inline; // hope this gets inlined
 	cut.add(struct);
+}
+
+function cutscene_wait_until(cut, func)
+{
+    cutscene_raw(cut, {
+        init: function() {},
+        event: func,
+    });
 }
 
 function cutscene_wait(cut, frames) {

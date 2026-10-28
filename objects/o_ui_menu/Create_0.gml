@@ -55,7 +55,6 @@ call_dialogue = function(dial_text,text, end_text) {
 }
 
 cells = [
-	new phone_credits(),
 	new phone_wrongnum(),
 ]
 
