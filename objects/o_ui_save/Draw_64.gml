@@ -1,4 +1,4 @@
-draw_set_font(loc_getfont(font_main))
+draw_set_font(loc_getfont(fnt_main))
 draw_set_color(c_white)
 draw_set_halign(fa_left)
 ui_dialoguebox_create(54,59,212,87)

@@ -16,7 +16,7 @@ board(board_x,board_y,board_w,board_h,board_a)
 	}
 }
 {
-	draw_set_font(loc_getfontmono(font_main))
+	draw_set_font(loc_getfont(fnt_main))
 	switch(menu.current) {
 		case BATTLE_MENU.CHOOSE_ENEMY:
             for (var i = 0; i<array_length(enemies); i++){ 
@@ -34,7 +34,7 @@ board(board_x,board_y,board_w,board_h,board_a)
 	}
 }
 { // bottom ui
-	draw_set_font(font_mars)
+	draw_set_font(fnt_mars)
 	draw_text_transformed(15,200,global.name,0.5,0.5,0)
 	draw_text_transformed(54+string_length(global.name),200,"LV "+string(global.lv),0.5,0.5,0)
 	draw_sprite_ext(spr_enc_ui_hp,0,120,200,0.5,0.5,0,c_white,1)

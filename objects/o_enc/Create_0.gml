@@ -201,7 +201,7 @@ board = function(_x, _y, _w, _h, _angle){
 
 draw_list_2x2 = function(list,get_name_func)
 {
-    draw_set_font(loc_getfontmono(font_main));
+    draw_set_font(loc_getfont(fnt_main));
 
     for (var i=0; i<array_length(list); i++){
 
@@ -221,7 +221,7 @@ draw_list_2x2 = function(list,get_name_func)
 }
 
 draw_enemy_list = function(show_hp=false) {
-    draw_set_font(loc_getfontmono(font_main))
+    draw_set_font(loc_getfont(fnt_main))
     for (var i = 0; i<array_length(enemies); i++){
         var xx = board_x-board_w*0.5+20
         var yy = board_y-board_h*0.5+10+16*i
@@ -255,7 +255,7 @@ draw_act_list = function(){
     if (array_length(acts) <= 0)
         return;
 
-    draw_set_font(loc_getfontmono(font_main));
+    draw_set_font(loc_getfont(fnt_main));
 
     for (var i = 0; i < array_length(acts); i++) {
 

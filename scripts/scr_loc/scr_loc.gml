@@ -7,20 +7,10 @@ function loc(english_value,japanese_value) {
 }
 
 function loc_getfont(font) {
-    if (font == font_main) {
+    if (font == fnt_main) {
         if (global.lang == "ja")
-			return font_main_ja
-        return font_main
-    }
-    
-    return font
-}
-
-function loc_getfontmono(font) {
-    if (font == font_main) {
-        if (global.lang == "ja")
-			return font_main_ja
-        return font_main_mono
+			return fnt_main_ja
+        return fnt_main
     }
     
     return font

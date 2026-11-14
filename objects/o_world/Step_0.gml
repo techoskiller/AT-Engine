@@ -1,5 +1,8 @@
-var _old_bord = global.borders
-frames ++
+if (global.borders!=last_borders){
+	__window_update()
+	last_borders = global.borders
+}
+frames++
 
 if keyboard_check_pressed(vk_f2) {
 	game_restart()
@@ -43,26 +46,19 @@ if (keyboard_check(vk_shift)&&keyboard_check_pressed(ord("E"))) {
 }
 
 if (frames % 30 == 0) { global.time++ }
-
-global.room_name=room_get_name(room)
 if (global.input_delay > 0) global.input_delay--
 
-if (global.borders != _old_bord) __window_update();
-    
-if (border_alpha < 1.0) {
-    border_alpha += 0.050; // adjust this, maybe?
-    
-    if (border_alpha >= 1.0) {
-        old_border  = border_spr;
-        border_wait = false;
-    }
+if (!border_wait&&old_border!=border_spr){
+	border_alpha = 0
+	border_wait  = true
 }
 
-// this could be overriden mid-wait
-// but thats a rare thing to happen
-if (!border_wait && old_border != border_spr && border_alpha >= 1.0) {
-    border_alpha = 0;
-    border_wait  = true;
+if (border_wait){
+	border_alpha = min(border_alpha+0.05,1)
+	if (border_alpha>=1){
+		old_border  = border_spr
+		border_wait = false
+	}
 }
 
 /* --------------------------------
@@ -83,5 +79,3 @@ game_h = 480 * ratio;
 
 game_x = border_x + (global.borders ? 160 * ratio : 0);
 game_y = border_y + (global.borders ? 30 * ratio : 0);
-
-__window_update()

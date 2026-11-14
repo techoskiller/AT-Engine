@@ -1,4 +1,4 @@
-draw_set_font(loc_getfont(font_main));
+draw_set_font(loc_getfont(fnt_main));
 
 {
 	draw_text_transformed(54+20.5-4-loc(0,6),106+74-20-80-10-9,string(global.name),1,1,0)
@@ -55,7 +55,7 @@ draw_set_font(loc_getfont(font_main));
 	}
 	
 	draw_set_color(8421504)
-	draw_set_font(font_menu)
+	draw_set_font(fnt_menu)
 	draw_set_halign(fa_center)
 	draw_text(160,232,"UNDERTALE ENGINE "+ENGINE_VERSION+" (C) Toby Fox 2015-2017")
 	draw_set_halign(fa_left)

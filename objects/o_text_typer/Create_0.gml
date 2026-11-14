@@ -9,6 +9,7 @@ line_length = infinity;
 voice = snd_text
 
 can_skip = true;
+can_continue = true;
 cur_char = 0;
 last_pos = -1;
 

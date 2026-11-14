@@ -1,4 +1,4 @@
-draw_set_font(loc_getfont(font_main));
+draw_set_font(loc_getfont(fnt_main));
 
 var addy = 136;
 if (!top){
@@ -19,7 +19,7 @@ if (!top){
 { // top box
 	draw_text(23+xxx,30+4-5+addy+yyy,string(global.name))
 	
-	draw_set_font(font_menu)
+	draw_set_font(fnt_menu)
 	draw_text(23+xxx,50-3+4+4-5+addy+yyy,"lv")
 	draw_text(41+xxx,50-3+4+4-5+addy+yyy,string(global.lv))
 	draw_text(23+xxx,59-3+4+4-5+addy+yyy,"hp")
@@ -28,7 +28,7 @@ if (!top){
 	draw_text(41+xxx,68-3+4+4-5+addy+yyy,string(global.gold))
 }
 { // options
-	draw_set_font(loc_getfont(font_main));
+	draw_set_font(loc_getfont(fnt_main));
 	for (var i = 0; i < array_length(options); ++i) {
 		
 		if (selection == i && state == 0)

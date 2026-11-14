@@ -1,4 +1,4 @@
-draw_set_font(loc_getfont(font_main))
+draw_set_font(loc_getfont(fnt_main))
 draw_set_color(c_black)
 
 var xx=30

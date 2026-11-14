@@ -6,6 +6,7 @@ if (timer==1){
 	t.spd=0.5
 	t.spacing=1
 	t.can_skip=false
+	t.can_continue=false
 	t.line_length=250
 	t.text="Long ago, two races ruled over Earth:(w,10) HUMANS and MONSTERS."
 }
@@ -25,6 +26,7 @@ if (timer==420){
 	t.spd=0.5
 	t.spacing=1
 	t.can_skip=false
+	t.can_continue=false
 	t.line_length=250
 	t.text="One day. Both HUMANS and MONSTERS broke war, destroying such peace."
 }
@@ -47,5 +49,8 @@ if (timer==720){
 	t.line_length=255
 	t.text="And with magic, they were sealed UNDERGROUND."
 }
-
+if InputPressed(INPUT.CONFIRM){
+	fader(0,1,30,c_black)
+	alarm[0]=30
+}
 image_alpha=alpha

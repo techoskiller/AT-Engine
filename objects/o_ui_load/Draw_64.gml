@@ -1,5 +1,5 @@
 /*
-draw_set_font(loc_getfont(font_main));
+draw_set_font(loc_getfont(fnt_main));
 
 if (section==2){
    draw_text_transformed(320/2.5, 240/2 + (20 / 2), "CHARA", 1 + (85 / 40), 1 + (85 / 40), irandom_range((-random(3) * 80) / 60, (random(3) * 80) / 60))

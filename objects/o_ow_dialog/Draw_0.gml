@@ -11,7 +11,7 @@ if (xx!=0||yy!=0){
 	}
     if (instance_exists(t)) {
     	if (on_choice) {
-    		draw_set_font(loc_getfont(font_main))
+    		draw_set_font(loc_getfont(fnt_main))
     		for(var i = 0; i < array_length(choices); i++) {
     			var soul_width = sprite_get_width(spr_ui_soul)
     			var name = choices[i].name

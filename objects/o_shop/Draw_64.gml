@@ -1,4 +1,4 @@
-draw_set_font(loc_getfont(font_main))
+draw_set_font(loc_getfont(fnt_main))
 
 { // main boxes
     if (menu==SHOP_STATES.MAINMENU||SHOP_STATES.OTHERMENU){

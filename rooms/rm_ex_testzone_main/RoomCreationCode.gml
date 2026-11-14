@@ -1,1 +1,0 @@
-Dialogue_Create("text")

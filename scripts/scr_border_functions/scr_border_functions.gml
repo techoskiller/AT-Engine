@@ -44,14 +44,25 @@ function border_force_reset() {
  * @param   {Asset.GMSprite | Constant.SpecialBorders} Sprite
  * @returns {bool}
  */
-function border_set_sprite(spr) {
-    with(border_manager) {
-        border_spr   = spr;
-        border_wait  = false;
-        border_alpha = 1.0;
-	    return true;
-    }
-    return false;
+function border_set_sprite(spr, instant=false){
+	with (border_manager){
+		if (border_spr==spr)
+			return true
+		if (instant){
+			border_spr   = spr
+			old_border   = spr
+			border_alpha = 1
+			border_wait  = false
+		}
+		else{
+			old_border   = border_spr
+			border_spr   = spr
+			border_alpha = 0
+			border_wait  = true
+		}
+		return true
+	}
+	return false
 }
 
 /**

@@ -35,9 +35,9 @@ else{
 		instance_destroy()
 		exit
 	}
-	t=instance_create(o_text_typer,xx+14,yy+11)
+	t=instance_create(o_text_typer,xx+14,yy+9)
 	t.x = xx+14
-	t.y = yy+11
+	t.y = yy+9
 	t.on_gui=true
 	t.text=text[line]
 }

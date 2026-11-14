@@ -23,8 +23,8 @@ function check_line_break(text, number, line_length, space, char_spacing, return
 function scr_draw_each_letter(_x, _y, text, _outlineEnabled = false, _outlineSpace = 1, _outlineColour = c_black, spacing = 1, line_length = infinity, draw_count = string_length(text)) {
 	static rainbow_time = 0;
 	
-	var font = draw_get_font() != -1 ? draw_get_font() : loc_getfont(font_main);
-	if (spacing <= 1 && font = loc_getfont(font_main))
+	var font = draw_get_font() != -1 ? draw_get_font() : loc_getfont(fnt_main);
+	if (spacing <= 1 && font = loc_getfont(fnt_main))
 		spacing = loc(0.89, 0.94);
 	var xx = _x;
 	var yy = _y;
@@ -56,7 +56,7 @@ function scr_draw_each_letter(_x, _y, text, _outlineEnabled = false, _outlineSpa
 				switch(arg[0]) {
 					case "font":
 						if (arg_count == 0)
-							draw_set_font(loc_getfont(font_main))
+							draw_set_font(loc_getfont(fnt_main))
 						else
 							draw_set_font(asset_get_index(arg[1]))
 					break;

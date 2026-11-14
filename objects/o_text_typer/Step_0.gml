@@ -9,6 +9,17 @@ if (!finished){
 			var arg = string_split(string_lower(string_copy(text, pos+1, (end_index - pos)-1)),",")
 			var arg_count = array_length(arg)-1
 			switch(arg[0]) {
+				
+				case "can_continue":
+					if (arg_count > 0)
+						can_continue=bool(arg[1])
+				break;
+				
+				case "can_skip":
+					if (arg_count > 0)
+						can_skip=bool(arg[1])
+				break;
+				
 				case "spd": case "speed":
 					if (arg_count > 0) {
 						spd = real(arg[1])
@@ -123,7 +134,8 @@ if (!finished){
 
 if (InputPressed(INPUT.CONFIRM)){
 	if (finished){
-		line++
+		if can_continue
+			line++
 	}
 }
 if (can_skip && InputPressed(INPUT.CANCEL))
