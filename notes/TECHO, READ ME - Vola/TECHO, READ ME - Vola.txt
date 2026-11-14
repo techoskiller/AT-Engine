@@ -1,0 +1,7 @@
+# this pr's addition:
+
+- in scr_dialog, two new functions are added
+- one global variable is added for the typer definitions
+- Dialogue_Create is modified to handle the new function thing
+
+you can delete this now :)
